@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>D&D</title>
+
+    <style>
+        /* css design of class .attributebox */
+        .attributebox {
+            background-color: lightblue;
+            border: 2px solid;
+            border-color: black;
+            border-radius: 20px;
+            width: fit-content;
+            text-align: center;
+            padding: 25px;
+        }
+
+        /* css design of header */
+        h2 {
+            font-size: 50px;
+        }
+    </style>
+
+    <script>
+        function formula() {
+            // call var ability by id name "Str'
+            var ability = document.getElementById("Str").value;
+
+            //test the output of var ability in console
+            console.log(ability)
+
+            // var modifier is the result of (var ability - 10) / 2
+            var modifier = (ability - 10) / 2
+
+            // test the output of var modifier in console
+            console.log(modifier)
+
+            document.getElementById('strength_text').innerHTML = modifier
+        }
+
+    </script>
+</head>
+
+<body>
+    <!-- div = D&D box -->
+    <div class="attributebox">
+
+        <!-- name of box= strength -->
+        <h1 class="attributes">STRENGTH</h1>
+
+        <!-- call modifier by id "strength text" -->
+        <h2 class="modifier" id="strength_text"></h2>
+
+        <!-- input box for user input -->
+        <input type="text" id="Str">
+
+        <!-- line break between input box & button-->
+        <br>
+        <!-- run JS function when button is clicked -->
+        <button onclick="formula()">Click for modified results!</button>
+    </div>
+</body>
+
+</html>
+
+<!--Character sheet 
+    6 Places to input numbers/stats for attributes:
+Intelligence, Wisdom, Charisma
+Constitution, Strength, Dexterirty
+(Ability - 10) / 2
+User inputs a number from 1-20 (From 20 sided die), we use formula to generate a number between -4 to 4 to add to roll.
+Modifiers (Output) (Result of Math)  
+
+Objective 1: 
+[x] Recieve user input 
+[x] Create input boxes (text)
+[x] Create button
+[x] Write code to transfer input from html to Javascript
+
+Objective 2:
+[x] Create math
+[x] Display math
+[ ] Create 6 different stats
+  - Each attribute returns modified results
+    do the maths, 6 times for 6 diff numbers- display them for the user
+    
+Objective 3:
+[/] Layout, make it look pretty
